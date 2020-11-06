@@ -8,7 +8,7 @@ namespace FullStackTestTests
         private int[] InputA() => new[] { 3, 3, 2, 1, 1 };
         private int[] InputB() => new[] { 1, 2, 3, 4, 5 };
         private int[] InputC() => new[] { -5, -1 };
-        private int[] InputD() => new[] { -2000000000, 2000000000 };
+        private int[] InputD() => new[] { -20000000, 20000000 };
         StatisticsService _statisticsService;
         [SetUp]
         public void Setup() => _statisticsService = new StatisticsService();
@@ -44,21 +44,21 @@ namespace FullStackTestTests
         }
 
         [Test]
-        public void MedianInputB()
+        public void RangeInputB()
         {
             Assert.AreEqual(_statisticsService.Range(InputB()), 4);
         }
 
         [Test]
-        public void MedianInputC()
+        public void RangeInputC()
         {
             Assert.AreEqual(_statisticsService.Range(InputC()), 4);
         }
 
         [Test]
-        public void MedianInputD()
+        public void RangeInputD()
         {
-            Assert.AreEqual(_statisticsService.Range(InputD()), 4000000000);
+            Assert.AreEqual(_statisticsService.Range(InputD()), 40000000);
         }
 
         [Test]
